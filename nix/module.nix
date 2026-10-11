@@ -169,10 +169,6 @@ in
   config = lib.mkIf cfg.enable {
     assertions = [
       {
-        assertion = cfg.wallpaper != null || cfg.seedColor != null;
-        message = "matugen: You must specify either `wallpaper` or `seedColor`.";
-      }
-      {
         assertion = !(cfg.wallpaper != null && cfg.seedColor != null);
         message = "matugen: `wallpaper` and `seedColor` cannot be used together.";
       }
